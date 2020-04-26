@@ -1,5 +1,6 @@
 package com.udacity.jokes_android_library;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,10 +8,13 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.udacity.jokes_android_library.ui.jokedetails.JokeDetailsFragment;
+import com.udacity.jokes_android_library.ui.jokedetails.JokeDetailsViewModel;
 
 public class JokeDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "JokeDetailsActivity";
+    private JokeDetailsViewModel mViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +26,14 @@ public class JokeDetailsActivity extends AppCompatActivity {
                     .commitNow();
         }
 
+        initViewMode();
         getJoke();
 
+
+    }
+
+    private void initViewMode() {
+        mViewModel = ViewModelProviders.of(this).get(JokeDetailsViewModel.class);
 
     }
 
@@ -32,11 +42,11 @@ public class JokeDetailsActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         if(intent != null){
-            String currentJoke = intent.getStringExtra("Joke");
-            Log.d(TAG, currentJoke);
+            String joke = intent.getStringExtra("Joke");
+    //        Log.d(TAG, joke);
 
-            Toast.makeText(this, currentJoke, Toast.LENGTH_LONG).show();
-
+            //Toast.makeText(this, joke, Toast.LENGTH_LONG).show();
+            mViewModel.setCurrentJoke(joke);
 
         }else{
             Log.d(TAG, "Intent null");

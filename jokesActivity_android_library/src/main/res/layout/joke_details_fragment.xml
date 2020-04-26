@@ -8,7 +8,7 @@
     tools:context=".ui.jokedetails.JokeDetailsFragment">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/text_joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JokeDetailsFragment"
