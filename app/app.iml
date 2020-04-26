@@ -137,5 +137,6 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement-license:11.8.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-gass-license:11.8.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.0.0@aar" level="project" />
+    <orderEntry type="module" module-name="jokes_java_library" />
   </component>
 </module>
