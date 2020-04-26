@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         String newJoke =  joker.getJoke();
 
 
-        Toast.makeText(this, newJoke, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, newJoke, Toast.LENGTH_LONG).show();
     }
 
 
