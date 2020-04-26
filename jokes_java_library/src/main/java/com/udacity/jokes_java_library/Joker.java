@@ -11,7 +11,8 @@ public class Joker {
 
     public static String getJoke() {
 
-        setJokes();
+        if (jokeList.isEmpty())
+            setJokes();
 
         // Select number for random joke
         Random rand = new Random();
