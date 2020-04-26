@@ -16,7 +16,7 @@ public class Joker {
 
         // Select number for random joke
         Random rand = new Random();
-        int randomNum = rand.nextInt(jokeList.size()) + 1;
+        int randomNum = rand.nextInt(jokeList.size());
 
 
         return jokeList.get(randomNum);
@@ -41,6 +41,15 @@ public class Joker {
         jokeList.add("Why did the orange stop? It ran out of juice!");
         jokeList.add("What did 0 say to 8? Nice belt!");
         jokeList.add("What do you call a boomerang that doesn't work? A stick.");
+        jokeList.add("What goes up and down but does not move? Stairs");
+        jokeList.add("What did one toilet say to the other? You look a bit flushed.");
+        jokeList.add("Why did the picture go to jail? Because it was framed.");
+        jokeList.add("What did one wall say to the other wall? I'll meet you at the corner.");
+        jokeList.add("What do you call a boy named Lee that no one talks to? Lonely");
+        jokeList.add("Why was the broom late? It over swept!");
+        jokeList.add("What makes the calendar seem so popular?  Because it has a lot of dates!");
+        jokeList.add("What is it that even the most careful person overlooks? Her nose!");
+
 
 /*        jokeList.add("");
         jokeList.add("");
