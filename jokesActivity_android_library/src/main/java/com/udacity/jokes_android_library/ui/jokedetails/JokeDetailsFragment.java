@@ -31,6 +31,13 @@ public class JokeDetailsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(JokeDetailsViewModel.class);
         // TODO: Use the ViewModel
+
+
+
+
     }
+
+
+
 
 }

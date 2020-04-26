@@ -1,2 +1,2 @@
 include ':app', ':backend', 'jokes_java_library'
-include ':jokes_android_library'
+include ':jokesActivity_android_library'

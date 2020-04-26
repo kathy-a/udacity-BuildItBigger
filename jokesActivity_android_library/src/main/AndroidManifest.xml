@@ -3,7 +3,7 @@
     package="com.udacity.jokes_android_library">
 
     <application>
-        <activity android:name=".JokeDetails"></activity>
+        <activity android:name=".JokeDetailsActivity"></activity>
     </application>
 
 </manifest>
