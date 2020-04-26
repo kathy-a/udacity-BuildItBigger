@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jokes_java_library.iml" filepath="$PROJECT_DIR$/jokes_java_library.iml" group="jokes_java_library" />
+      <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" group="udacity-project-BuildItBigger/app" />
+      <module fileurl="file://$PROJECT_DIR$/../backend/backend.iml" filepath="$PROJECT_DIR$/../backend/backend.iml" group="udacity-project-BuildItBigger/backend" />
+      <module fileurl="file://$PROJECT_DIR$/jokes_java_library.iml" filepath="$PROJECT_DIR$/jokes_java_library.iml" group="udacity-project-BuildItBigger/jokes_java_library" />
+      <module fileurl="file://$PROJECT_DIR$/../udacity-project-BuildItBigger.iml" filepath="$PROJECT_DIR$/../udacity-project-BuildItBigger.iml" group="udacity-project-BuildItBigger" />
     </modules>
   </component>
 </project>
