@@ -11,6 +11,9 @@ import android.widget.Toast;
 import com.udacity.jokes_android_library.JokeDetailsActivity;
 import com.udacity.jokes_java_library.Joker;
 
+import java.io.Serializable;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -45,17 +48,13 @@ public class MainActivity extends AppCompatActivity {
     public void launchJokeActivity(View view) {
 
         Joker joker = new Joker();
-        String newJoke =  joker.getJoke();
-
-
-        //Toast.makeText(this, newJoke, Toast.LENGTH_LONG).show();
-
+        List<String> jokeList = joker.getJokeList();
 
         Class destinationActivity = JokeDetailsActivity.class;
 
         Intent intent = new Intent(this, destinationActivity);
 
-        intent.putExtra("Joke", newJoke);
+        intent.putExtra("JokeList", (Serializable) jokeList);
         startActivity(intent);
 
     }

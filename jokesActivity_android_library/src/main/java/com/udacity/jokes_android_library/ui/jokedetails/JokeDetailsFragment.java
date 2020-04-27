@@ -1,6 +1,5 @@
 package com.udacity.jokes_android_library.ui.jokedetails;
 
-import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
@@ -45,20 +44,20 @@ public class JokeDetailsFragment extends Fragment {
 
         initViewModel();
 
+        //getRandomJoke();
 
 
 
 
     }
 
+
+
     private void initViewModel() {
         mViewModel = ViewModelProviders.of(this).get(JokeDetailsViewModel.class);
 
         final TextView textJoke= rootView.findViewById(R.id.text_joke);
 
-
-        textJoke.setText("HAHA");
-        //mViewModel.setCurrentJoke("beeee");
 
         //Observer of currentJoke
         mViewModel.getCurrentJoke().observe(this, new Observer<String>() {

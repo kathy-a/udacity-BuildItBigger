@@ -8,19 +8,13 @@ public class Joker {
 
     private static List<String> jokeList = new ArrayList<>();
 
-
-    public static String getJoke() {
-
+    public static List<String> getJokeList() {
         if (jokeList.isEmpty())
             setJokes();
 
-        // Select number for random joke
-        Random rand = new Random();
-        int randomNum = rand.nextInt(jokeList.size());
-
-
-        return jokeList.get(randomNum);
+        return jokeList;
     }
+    
 
     private static void setJokes() {
         jokeList.add("Is it true that cannibals don't eat clowns because they taste funny?");

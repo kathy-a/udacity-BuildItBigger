@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.udacity.jokes_android_library.ui.jokedetails.JokeDetailsFragment;
 import com.udacity.jokes_android_library.ui.jokedetails.JokeDetailsViewModel;
+
+import java.util.List;
 
 public class JokeDetailsActivity extends AppCompatActivity {
 
@@ -37,16 +40,23 @@ public class JokeDetailsActivity extends AppCompatActivity {
 
     }
 
+    public void getRandomJoke(View view) {
+        mViewModel.setNewRandomJoke();
+
+    }
+
     private void getJoke() {
 
         Intent intent = getIntent();
 
         if(intent != null){
-            String joke = intent.getStringExtra("Joke");
-    //        Log.d(TAG, joke);
+            List<String> jokeList = (List<String>) intent.getSerializableExtra("JokeList");
 
-            //Toast.makeText(this, joke, Toast.LENGTH_LONG).show();
-            mViewModel.setCurrentJoke(joke);
+            // Set joke list for view Model
+            mViewModel.setsJokeList(jokeList);
+
+            //Select random joke
+            mViewModel.setNewRandomJoke();
 
         }else{
             Log.d(TAG, "Intent null");

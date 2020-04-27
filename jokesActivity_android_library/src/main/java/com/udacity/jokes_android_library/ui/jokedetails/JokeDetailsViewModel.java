@@ -4,19 +4,46 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class JokeDetailsViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-    private static  MutableLiveData<String> currentJoke = new MutableLiveData<>();
+public class JokeDetailsViewModel extends ViewModel {
+
+    private static  MutableLiveData<String> sCurrentJoke = new MutableLiveData<>();
+    private static List<String> sJokeList = new ArrayList<>();
 
 
     /**
-     * @return current Joke set
+     * @return jokeList
+     */
+    public static List<String> getsJokeList() {
+        return sJokeList;
+    }
+    public static void setsJokeList(List<String> sJokeList) {
+        JokeDetailsViewModel.sJokeList = sJokeList;
+    }
+
+
+    /**
+     * @return current Joke
      */
     public LiveData<String> getCurrentJoke() {
-        return currentJoke;
+        return sCurrentJoke;
     }
     public void setCurrentJoke(String currentJoke) {
-        this.currentJoke.setValue(currentJoke);
+        this.sCurrentJoke.setValue(currentJoke);
+    }
+
+
+    /** Select random joke
+     */
+    public void setNewRandomJoke() {
+        // Select number for random joke
+        Random rand = new Random();
+        int randomNum = rand.nextInt(sJokeList.size());
+
+        sCurrentJoke.setValue(sJokeList.get(randomNum));
+
     }
 }
