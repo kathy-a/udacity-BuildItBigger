@@ -4,6 +4,14 @@ package com.udacity.gradle.builditbigger.backend;
 public class MyBean {
 
     private String myData;
+    private String jokeList;
+
+
+    public String getJokeList() {
+        jokeList = "haha";
+        return jokeList;
+    }
+
 
     public String getData() {
         return myData;
