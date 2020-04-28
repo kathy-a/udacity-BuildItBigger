@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // TODO: REMOVE SAMPLE ASYNC TASK
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+        //endpointsAsyncTask.cancel(true);
+        endpointsAsyncTask.execute(this);
 
     }
 

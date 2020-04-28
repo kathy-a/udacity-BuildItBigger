@@ -7,8 +7,14 @@ public class MyBean {
     private String jokeList;
 
 
+    public void setJokeList(String jokeList) {
+        this.jokeList = jokeList;
+    }
+
+
+
     public String getJokeList() {
-        jokeList = "haha";
+       // jokeList = "MyBean String ";
         return jokeList;
     }
 
