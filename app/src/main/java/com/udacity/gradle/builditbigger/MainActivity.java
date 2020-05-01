@@ -23,11 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // TODO: REMOVE SAMPLE ASYNC TASK
-        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
-        //endpointsAsyncTask.cancel(true);
-        endpointsAsyncTask.execute(this);
-
     }
 
 
@@ -55,15 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchJokeActivity(View view) {
 
-        Joker joker = new Joker();
-        List<String> jokeList = joker.getJokeList();
-
-        Class destinationActivity = JokeDetailsActivity.class;
-
-        Intent intent = new Intent(this, destinationActivity);
-
-        intent.putExtra("JokeList", (Serializable) jokeList);
-        startActivity(intent);
+        // Loads jokes from GCE module
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+        endpointsAsyncTask.execute(this);
 
     }
 
