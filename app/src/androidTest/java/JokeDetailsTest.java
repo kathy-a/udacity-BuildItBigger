@@ -24,6 +24,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.core.IsNot.not;
 
 
+/**
+ * Test Jokes Details Activity & verify it receives intent extra
+ * and can request random joke (via random joke button)
+ */
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class JokeDetailsTest {
