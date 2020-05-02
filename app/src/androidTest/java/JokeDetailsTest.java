@@ -1,18 +1,26 @@
 import android.app.Activity;
 import android.app.Instrumentation;
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.intent.rule.IntentsTestRule;
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.udacity.gradle.builditbigger.MainActivity;
+import com.udacity.gradle.builditbigger.R;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.Intents.intending;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasExtraWithKey;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.isInternal;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.core.IsNot.not;
 
 
@@ -43,11 +51,20 @@ public class JokeDetailsTest {
             e.printStackTrace();
         }
 
+        //Click launch joke button
+        onView(ViewMatchers.withId(R.id.button_launchJoke)).perform(ViewActions.click());
 
+        // Check if Jokes Activity has intent extra
+        intended(hasExtraWithKey("JokeList"));
 
-
+        // Click random joke button to generate random joke & check the textview is not empty
+        for (int i = 0; i < 10; i++){
+            onView(ViewMatchers.withId(R.id.text_joke)).check(matches(not(withText(""))));
+            onView(ViewMatchers.withId(R.id.button_randomJoke)).perform(ViewActions.click());
+        }
 
 
     }
+
 
 }
