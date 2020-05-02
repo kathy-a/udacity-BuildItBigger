@@ -19,7 +19,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-class EndpointsAsyncTask extends AsyncTask<Context, Void, List<String>>  {
+public class EndpointsAsyncTask extends AsyncTask<Context, Void, List<String>>  {
     private static MyApi myApiService = null;
     private Context context;
     private static final String TAG = "EndpointsAsyncTask";
