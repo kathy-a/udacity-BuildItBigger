@@ -17,10 +17,6 @@ import com.google.android.gms.ads.AdView;
  */
 public class MainActivityFragment extends Fragment {
 
-    private static final String PACKAGE_PAID = "com.udacity.gradle.builditbigger.paid";
-    private static final String PACKAGE_FREE = "com.udacity.gradle.builditbigger.free";
-
-
     public MainActivityFragment() {
     }
 
@@ -28,21 +24,6 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-
-
-        String packageName = getActivity().getPackageName();
-
-        // Setup add if it's a free flavor
-        if (packageName.equals(PACKAGE_FREE)){
-            AdView mAdView = (AdView) root.findViewById(R.id.adView);
-            // Create an ad request. Check logcat output for the hashed device ID to
-            // get test ads on a physical device. e.g.
-            // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
-            AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
-            mAdView.loadAd(adRequest);
-        }
 
 
         return root;
