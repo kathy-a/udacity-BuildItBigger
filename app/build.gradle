@@ -31,27 +31,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "client"
+    productFlavors {
+        free {
+            dimension "client"
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+        paid {
+            dimension "client"
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.google.android.gms:play-services-ads:11.8.0'
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.1'
-    implementation project (':jokes_java_library')
-    implementation project (':jokesActivity_android_library')
+    implementation project(':jokes_java_library')
+    implementation project(':jokesActivity_android_library')
 
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
-//TODO CLEANUP DEPENDENCIES
-/*    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 
-    testImplementation 'junit:junit:4.12'*/
     // Espresso dependencies
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:rules:1.2.0'
@@ -65,8 +73,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude module: 'recyclerview-v7'
     }
-
-
 
 
 }

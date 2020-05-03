@@ -15,6 +15,8 @@ import com.google.android.gms.ads.AdView;
  */
 public class MainActivityFragment extends Fragment {
 
+
+
     public MainActivityFragment() {
     }
 
@@ -31,6 +33,8 @@ public class MainActivityFragment extends Fragment {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
+
         return root;
     }
 }
