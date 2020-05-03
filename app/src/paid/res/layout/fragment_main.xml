@@ -23,6 +23,4 @@
         android:onClick="launchJokeActivity"
         android:text="@string/button_text" />
 
-
-
 </RelativeLayout>
