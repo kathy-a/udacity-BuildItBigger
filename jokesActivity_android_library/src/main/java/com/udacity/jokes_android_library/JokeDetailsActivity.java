@@ -16,6 +16,7 @@ import java.util.List;
 public class JokeDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "JokeDetailsActivity";
+    private static final String INTENT_EXTRA = "JokeList";
     private JokeDetailsViewModel mViewModel;
 
 
@@ -49,8 +50,8 @@ public class JokeDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if(intent != null){
-            List<String> jokeList = (List<String>) intent.getSerializableExtra("JokeList");
+        if(intent != null && intent.hasExtra(INTENT_EXTRA)){
+            List<String> jokeList = (List<String>) intent.getSerializableExtra(INTENT_EXTRA);
 
             // Set joke list for view Model
             mViewModel.setsJokeList(jokeList);
